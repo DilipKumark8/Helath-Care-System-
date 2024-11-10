@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Billing</title>
+</head>
+<body>
+    <h1>Add Billing</h1>
+    <form action="{{ url_for('add_billing') }}" method="POST">
+        <label>Appointment:</label>
+        <select name="appointment_id">
+            {% for appointment in appointments %}
+                <option value="{{ appointment.id }}">Appointment {{ appointment.id }} on {{ appointment.date }}</option>
+            {% endfor %}
+        </select><br>
+        <label>Amount:</label>
+        <input type="number" name="amount" step="0.01" required><br>
+        <input type="submit" value="Add Billing Record">
+    </form>
+</body>
+</html>

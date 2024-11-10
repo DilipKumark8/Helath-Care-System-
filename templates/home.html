@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Management System</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Healthcare Management System</h1>
+        <p>Manage patient records, appointments, and billing with ease.</p>
+
+        <div class="navigation">
+            <a href="{{ url_for('view_patients') }}">
+                <img src="{{ url_for('static', filename='images/Patient.jpg') }}" alt="Patient Icon" class="icon">
+                Patient Records
+            </a>
+            <a href="{{ url_for('view_doctors') }}">
+                <img src="{{ url_for('static', filename='images/doctor_icon.png') }}" alt="Doctor Icon" class="icon">
+                Doctor Profiles
+            </a>
+            <a href="{{ url_for('view_appointments') }}">
+                <img src="{{ url_for('static', filename='images/appointment_icon.png') }}" alt="Appointment Icon" class="icon">
+                Appointments
+            </a>
+            <a href="{{ url_for('view_billings') }}">
+                <img src="{{ url_for('static', filename='images/billing_icon.png') }}" alt="Billing Icon" class="icon">
+                Billing
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+</head>
+<body>
+    <h1>Doctors</h1>
+    <a href="{{ url_for('add_doctor') }}">Add New Doctor</a>
+    <ul>
+        {% for doctor in doctors %}
+            <li>
+                {{ doctor.name }}, Specialization: {{ doctor.specialization }}
+                <form action="{{ url_for('delete_doctor', id=doctor.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
